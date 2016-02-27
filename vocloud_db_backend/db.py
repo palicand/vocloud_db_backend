@@ -1,0 +1,4 @@
+import cassandra
+
+class CassandraDB(:
+    )
