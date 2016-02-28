@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-        name='vocloud-db-backend',
+        name='vocloud_db_backend',
         version='0.0.1',
         packages=find_packages(),
         url='',
