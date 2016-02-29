@@ -43,8 +43,9 @@ def insert_spectrum(spectrum):
 
 
 def get_spectrum(spectrum_id):
+    logger.info("Getting spectrum with id %s", spectrum_id)
     try:
-        data = CassSpectrum.get(spectrum_id=spectrum_id)
+        data = CassSpectrum.objects(spectrum_id=spectrum_id)
         return [instance.to_dict() for instance in data]
     except DoesNotExist as e:
         return None
