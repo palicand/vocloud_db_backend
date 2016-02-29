@@ -25,6 +25,7 @@ class CassSpectrum(Model):
 
 
 def connect(hosts, port=9042):
+    logger.info("Connecting to db %s:%d", hosts, port)
     connection.setup(hosts, "vocloud", port=port)
     connection.session.execute("CREATE KEYSPACE IF NOT EXISTS vocloud WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};")
     sync_table(CassSpectrum)
